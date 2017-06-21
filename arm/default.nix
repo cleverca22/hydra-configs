@@ -27,7 +27,7 @@ let
     };
     nixpkgs = defaults // {
       nixexprinput = "extra";
-      nixexprpath = "arm/nixpkgs/release-arm";
+      nixexprpath = "arm/nixpkgs/release-arm.nix";
       inputs = {
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
         extra = mkFetchGithub "https://github.com/cleverca22/hydra-configs master";
