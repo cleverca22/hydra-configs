@@ -18,11 +18,20 @@ let
     nix = defaults // {
       description = "nix on arm";
       nixexprinput = "extra";
-      nixexprpath = "arm/release-arm.nix";
+      nixexprpath = "arm/nix/release-arm.nix";
       inputs = {
         nix = mkFetchGithub "https://github.com/nixos/nix master";
         extra = mkFetchGithub "https://github.com/cleverca22/hydra-configs master";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
+      };
+    };
+    nixpkgs = defaults // {
+      nixexprinput = "extra";
+      nixexprpath = "arm/nixpkgs/release-arm";
+      inputs = {
+        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
+        extra = mkFetchGithub "https://github.com/cleverca22/hydra-configs master";
+        supportedSystems = { type = "nix"; value = ''[ "armv7l-linux" ]''; emailresponsible = false; };
       };
     };
   };
