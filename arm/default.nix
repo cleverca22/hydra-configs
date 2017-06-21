@@ -18,9 +18,10 @@ let
     nix = defaults // {
       description = "nix on arm";
       nixexprinput = "nix";
-      nixexprpath = "release-arm.nix";
+      nixexprpath = "arm/release-arm.nix";
       inputs = {
-        nix = { type="path"; value="/etc/nixos/nix"; emailresponsible = false; };
+        nix = mkFetchGithub "https://github.com/nixos/nix master";
+        extra = mkFetchGithub "https://github.com/cleverca22/hydra-configs master";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
       };
     };
