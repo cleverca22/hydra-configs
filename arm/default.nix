@@ -17,7 +17,7 @@ let
   jobsetsAttrs = {
     nix = defaults // {
       description = "nix on arm";
-      nixexprinput = "nix";
+      nixexprinput = "extra";
       nixexprpath = "arm/release-arm.nix";
       inputs = {
         nix = mkFetchGithub "https://github.com/nixos/nix master";
