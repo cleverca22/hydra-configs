@@ -1,10 +1,7 @@
 let
   pkgs = import <nixpkgs>{};
-  mkFetchGithub = value: {
-    inherit value;
-    type = "git";
-    emailresponsible = false;
-  };
+in with (import ../lib.nix { inherit pkgs; });
+let
   defaults = {
     enabled = 1;
     hidden = false;

@@ -1,0 +1,16 @@
+{
+  "enabled": 1,
+  "hidden": false,
+  "description": "toxvpn tests",
+  "nixexprinput": "configs",
+  "nixexprpath": "toxvpn/default.nix",
+  "checkinterval": 60,
+  "schedulingshares": 100,
+  "enableemail": false,
+  "emailoverride": "",
+  "keepnr": 10,
+  "inputs":{
+    "nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs-channels.git nixos-17.03", "emailresponsible": false },
+    "configs": { "type": "git", "value": "https://github.com/cleverca22/hydra-configs master", "emailresponsible": false }
+  }
+}
