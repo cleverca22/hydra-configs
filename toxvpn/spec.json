@@ -11,6 +11,7 @@
   "keepnr": 10,
   "inputs":{
     "nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs-channels.git nixos-17.03", "emailresponsible": false },
-    "configs": { "type": "git", "value": "https://github.com/cleverca22/hydra-configs master", "emailresponsible": false }
+    "configs": { "type": "git", "value": "https://github.com/cleverca22/hydra-configs master", "emailresponsible": false },
+    "pulls": { "type": "githubpulls", "value": "cleverca22 toxvpn", "emailresponsible": false }
   }
 }
