@@ -5,10 +5,10 @@
     "nixexprinput": "src",
     "nixexprpath": "jobsets/default.nix",
     "checkinterval": 60,
-    "schedulingshares": 420,
+    "schedulingshares": 1000,
     "enableemail": true,
     "emailoverride": "",
-    "keepnr": 3,
+    "keepnr": 10,
     "inputs": {
          "src": { "type": "git", "value": "https://github.com/input-output-hk/iohk-nixops.git devops-171-hydra-prs", "emailresponsible": false }
          ,"nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs-channels.git nixos-16.09", "emailresponsible": false }
