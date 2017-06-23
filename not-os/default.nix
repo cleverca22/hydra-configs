@@ -29,7 +29,7 @@ let
       description = "notos-unstable";
       inputs = {
         notos = mkFetchGithub "https://github.com/cleverca22/not-os master";
-        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs.git masterl";
+        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs.git master";
         supportedSystems2 = { type = "nix"; value = ''[ "x86_64-linux" "i686-linux" "armv7l-linux" "armv6l-linux" ]''; emailresponsible = false; };
       };
     };
