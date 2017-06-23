@@ -81,6 +81,7 @@ rec {
   ratpoison = linux;
   runit = linux;
   screen = linux;
+  subversion = linux;
   spidermonkey_17 = linux;
   spidermonkey = linux;
   stdenv = all;
