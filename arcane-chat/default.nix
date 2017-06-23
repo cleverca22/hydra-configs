@@ -9,8 +9,8 @@ let
     nixexprinput = "arcane-chat";
     nixexprpath = "release.nix";
   };
-  mkJobset = { enable ? 1, desc, url?null, branch?"master", nixpkgs-repo?"nixpkgs-channels.git", nixpkgs-branch }: defaults // {
-    inherit enable;
+  mkJobset = { enabled ? 1, desc, url?null, branch?"master", nixpkgs-repo?"nixpkgs-channels.git", nixpkgs-branch }: defaults // {
+    inherit enabled;
     description = desc;
     inputs = {
       arcane-chat = mkFetchGithub (if url != null then "${url} ${branch}" else "https://github.com/arcane-chat/arcane-chat ${branch}");
@@ -21,13 +21,13 @@ let
     arcane-chat-unstable = mkJobset {
       desc = "arcane-chat-unstable";
       nixpkgs-branch = "nixos-unstable-small";
-      enable = 0;
+      enabled = 0;
     };
     arcane-chat-master = mkJobset {
       desc = "arcane-chat-master";
       nixpkgs-branch = "master";
       nixpkgs-repo = "nixpkgs.git";
-      enable = 0;
+      enabled = 0;
     };
     "arcane-chat-16.09" = mkJobset {
       desc = "arcane-chat-16.09";
