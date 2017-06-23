@@ -20,7 +20,7 @@ let
     notos-unstable = defaults // {
       description = "notos-unstable";
       inputs = {
-        notos = mkFetchGithub "https://github.com/cleverca22/notos master";
+        notos = mkFetchGithub "https://github.com/cleverca22/not-os master";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
         supportedSystems2 = { type = "nix"; value = ''[ "x86_64-linux" "i686-linux" "armv7l-linux" "armv6l-linux" ]''; emailresponsible = false; };
       };
@@ -28,7 +28,7 @@ let
     notos-master = defaults // {
       description = "notos-unstable";
       inputs = {
-        notos = mkFetchGithub "https://github.com/cleverca22/notos master";
+        notos = mkFetchGithub "https://github.com/cleverca22/not-os master";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs.git masterl";
         supportedSystems2 = { type = "nix"; value = ''[ "x86_64-linux" "i686-linux" "armv7l-linux" "armv6l-linux" ]''; emailresponsible = false; };
       };
