@@ -12,7 +12,7 @@ let
   mkJobset = { desc, url?null, branch?"master", nixpkgs-repo?"nixpkgs-channels.git", nixpkgs-branch }: defaults // {
     description = desc;
     inputs = {
-      arcane-chat = mkFetchGithub (if url != null then "${url} ${branch}" else "https://github.com/cleverca22/arcane-chat ${branch}");
+      arcane-chat = mkFetchGithub (if url != null then "${url} ${branch}" else "https://github.com/arcane-chat/arcane-chat ${branch}");
       nixpkgs = mkFetchGithub "https://github.com/nixos/${nixpkgs-repo} ${nixpkgs-branch}";
     };
   };
