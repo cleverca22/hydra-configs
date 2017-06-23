@@ -13,7 +13,7 @@ let
     checkinterval = 60;
     enableemail = false;
     emailoverride = "";
-    nixexprinput = "not-os";
+    nixexprinput = "notos";
     nixexprpath = "release.nix";
   };
   primary_jobsets = {
