@@ -4,7 +4,7 @@
   "description": "",
   "nixexprinput": "configs",
   "nixexprpath": "arcane-chat/default.nix",
-  "checkinterval": 60,
+  "checkinterval": 300,
   "schedulingshares": 100,
   "enableemail": false,
   "emailoverride": "",
