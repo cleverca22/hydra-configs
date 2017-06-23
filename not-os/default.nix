@@ -5,14 +5,7 @@ let
 in with (import ../lib.nix { inherit pkgs; });
 with pkgs.lib;
 let
-  defaults = {
-    enabled = 1;
-    hidden = false;
-    keepnr = 10;
-    schedulingshares = 100;
-    checkinterval = 60;
-    enableemail = false;
-    emailoverride = "";
+  defaults = globalDefaults // {
     nixexprinput = "notos";
     nixexprpath = "release.nix";
   };
@@ -26,7 +19,7 @@ let
       };
     };
     notos-master = defaults // {
-      description = "notos-unstable";
+      description = "notos-master";
       inputs = {
         notos = mkFetchGithub "https://github.com/cleverca22/not-os master";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs.git master";
