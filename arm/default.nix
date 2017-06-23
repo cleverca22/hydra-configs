@@ -2,19 +2,12 @@ let
   pkgs = import <nixpkgs>{};
 in with (import ../lib.nix { inherit pkgs; });
 let
-  defaults = {
-    enabled = 1;
-    hidden = false;
-    keepnr = 10;
-    schedulingshares = 100;
-    checkinterval = 60;
-    enableemail = false;
-    emailoverride = "";
+  defaults = globalDefaults // {
+    nixexprinput = "extra";
   };
   jobsetsAttrs = {
     nix = defaults // {
       description = "nix on arm";
-      nixexprinput = "extra";
       nixexprpath = "arm/nix/release-arm.nix";
       inputs = {
         nix = mkFetchGithub "https://github.com/nixos/nix master";
@@ -23,7 +16,6 @@ let
       };
     };
     nixpkgs = defaults // {
-      nixexprinput = "extra";
       nixexprpath = "arm/nixpkgs/release-arm.nix";
       inputs = {
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
