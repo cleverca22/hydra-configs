@@ -22,7 +22,6 @@ let
       desc = "ghcjs-nixpkgs-unstable";
       nixpkgs-branch = "nixpkgs-unstable";
       nixpkgs-repo = "nixpkgs-channels.git";
-      enabled = 0;
     };
   };
   pr_data = builtins.fromJSON (builtins.readFile pulls);
