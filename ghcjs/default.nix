@@ -11,6 +11,7 @@ let
   };
   mkJobset = { enabled ? 1, desc, url?null, branch?"master", nixpkgs-repo?"nixpkgs-channels.git", nixpkgs-branch }: defaults // {
     inherit enabled;
+    schedulingshares = 1;
     description = desc;
     inputs = {
       configs = mkFetchGithub (if url != null then "${url} ${branch}" else "https://github.com/cleverca22/hydra-configs ${branch}");
