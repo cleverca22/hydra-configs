@@ -10,7 +10,7 @@ let
     hidden = false;
     keepnr = 10;
     schedulingshares = 100;
-    checkinterval = 60;
+    checkinterval = 600;
     enableemail = false;
     emailoverride = "";
     nixexprinput = "toxvpn";
