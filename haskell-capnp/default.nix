@@ -8,6 +8,7 @@ let
   mkProjectJobset = { url?null, branch?"master", nixpkgs-repo?"nixpkgs-channels.git", nixpkgs-branch, ... }@args: mkJobset ((removeAttrs args [ "nixpkgs-branch" "url" "branch" "nixpkgs-repo" ]) // {
     nixexprpath = "release.nix";
     nixexprinput = "haskell-capnp";
+    checkinterval = 600;
     inputs = {
       haskell-capnp = mkFetchGithub (if url != null then "${url} ${branch}" else "https://github.com/zenhack/haskell-capnp ${branch}");
       nixpkgs = mkFetchGithub "https://github.com/nixos/${nixpkgs-repo} ${nixpkgs-branch}";
