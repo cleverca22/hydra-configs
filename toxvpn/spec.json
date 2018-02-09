@@ -4,7 +4,7 @@
   "description": "toxvpn tests",
   "nixexprinput": "configs",
   "nixexprpath": "toxvpn/default.nix",
-  "checkinterval": 60,
+  "checkinterval": 600,
   "schedulingshares": 100,
   "enableemail": false,
   "emailoverride": "",
