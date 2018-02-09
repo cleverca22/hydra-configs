@@ -8,6 +8,7 @@ let
   defaults = globalDefaults // {
     nixexprinput = "notos";
     nixexprpath = "release.nix";
+    checkinterval = 600;
   };
   primary_jobsets = {
     notos-unstable = defaults // {

@@ -4,7 +4,7 @@
   "description": "A Nix based OS, but not NixOS",
   "nixexprinput": "configs",
   "nixexprpath": "not-os/default.nix",
-  "checkinterval": 60,
+  "checkinterval": 600,
   "schedulingshares": 100,
   "enableemail": false,
   "emailoverride": "",
