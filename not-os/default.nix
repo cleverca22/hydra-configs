@@ -5,6 +5,7 @@ let
 in with (import ../lib.nix { inherit pkgs; });
 with pkgs.lib;
 let
+  systems = ''[ "x86_64-linux" "i686-linux" ]'';
   defaults = globalDefaults // {
     nixexprinput = "notos";
     nixexprpath = "release.nix";
@@ -16,7 +17,7 @@ let
       inputs = {
         notos = mkFetchGithub "https://github.com/cleverca22/not-os master";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
-        supportedSystems2 = { type = "nix"; value = ''[ "x86_64-linux" "i686-linux" "armv7l-linux" "armv6l-linux" ]''; emailresponsible = false; };
+        supportedSystems2 = { type = "nix"; value = systems; emailresponsible = false; };
       };
     };
     notos-master = defaults // {
@@ -24,7 +25,7 @@ let
       inputs = {
         notos = mkFetchGithub "https://github.com/cleverca22/not-os master";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs.git master";
-        supportedSystems2 = { type = "nix"; value = ''[ "x86_64-linux" "i686-linux" "armv7l-linux" "armv6l-linux" ]''; emailresponsible = false; };
+        supportedSystems2 = { type = "nix"; value = systems; emailresponsible = false; };
       };
     };
   };
@@ -36,7 +37,7 @@ let
       inputs = {
         notos = mkFetchGithub "https://github.com/${info.head.repo.owner.login}/${info.head.repo.name}.git ${info.head.ref}";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
-        supportedSystems2 = { type = "nix"; value = ''[ "x86_64-linux" "i686-linux" "armv7l-linux" "armv6l-linux" ]''; emailresponsible = false; };
+        supportedSystems2 = { type = "nix"; value = systems; emailresponsible = false; };
       };
     };
   };
