@@ -8,6 +8,7 @@ let
   mkProjectJobset = { url?null, branch?"master", nixpkgs-repo?"nixpkgs-channels.git", nixpkgs-branch, ... }@args: mkJobset ((removeAttrs args [ "nixpkgs-branch" "url" "branch" "nixpkgs-repo" ]) // {
     nixexprpath = "release.nix";
     nixexprinput = "arcane-chat";
+    keepnr = 0;
     inputs = {
       arcane-chat = mkFetchGithub (if url != null then "${url} ${branch}" else "https://github.com/arcane-chat/arcane-chat ${branch}");
       nixpkgs = mkFetchGithub "https://github.com/nixos/${nixpkgs-repo} ${nixpkgs-branch}";
