@@ -4,20 +4,20 @@ rec {
   globalDefaults = {
     enabled = 1;
     hidden = false;
-    keepnr = 10;
+    keepnr = 5;
     schedulingshares = 100;
     checkinterval = 3600;
     enableemail = false;
     emailoverride = "";
   };
-  mkJobset = { enabled ? 1, hidden ? false, description ? "", nixexprinput, nixexprpath, checkinterval ? 5 * minutes, schedulingshares ? 100, enableemail ? false, emailoverride ? false, keepnr ? 10, inputs }@args: {
+  mkJobset = { enabled ? 1, hidden ? false, description ? "", nixexprinput, nixexprpath, checkinterval ? 5 * minutes, schedulingshares ? 100, enableemail ? false, emailoverride ? false, keepnr ? 5, inputs }@args: {
     enabled = 1;
     hidden = false;
     emailoverride = "";
     enableemail = false;
     checkinterval = 5 * minutes;
     schedulingshares = 100;
-    keepnr = 10;
+    keepnr = 5;
   } // args;
   mkFetchGithub = value: {
     inherit value;
