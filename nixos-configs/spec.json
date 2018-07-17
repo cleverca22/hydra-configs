@@ -1,0 +1,16 @@
+{
+  "enabled": 1,
+  "hidden": false,
+  "description": "all of my nixos configs",
+  "nixexprinput": "configs",
+  "nixexprpath": "nixos-configs/default.nix",
+  "checkinterval": 600,
+  "schedulingshares": 100,
+  "enableemail": false,
+  "emailoverride": "",
+  "keepnr": 10,
+  "inputs":{
+    "nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs-channels.git nixos-unstable", "emailresponsible": false },
+    "configs": { "type": "git", "value": "https://github.com/cleverca22/hydra-configs master", "emailresponsible": false }
+  }
+}
