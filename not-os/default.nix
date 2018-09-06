@@ -35,7 +35,7 @@ let
     value = defaults // {
       description = "PR ${num}: ${info.title}";
       inputs = {
-        notos = mkFetchGithub "https://github.com/${info.head.repo.owner.login}/${info.head.repo.name}.git ${info.head.ref}";
+        notos = mkFetchGithub "https://github.com/cleverca22/not-os pull/${num}/head";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
         supportedSystems2 = { type = "nix"; value = systems; emailresponsible = false; };
       };
