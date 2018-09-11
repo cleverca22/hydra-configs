@@ -17,7 +17,10 @@ let
       nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
     };
   };
-  jobsetsAttrs = { inherit nixos-configs; };
+  jobsetsAttrs = {
+    inherit nixos-configs;
+    dummy = nixos-configs // { inputs = { foo = true; }; };
+  };
 in {
   jobsets = pkgs.writeText "spec.json" (builtins.toJSON jobsetsAttrs);
 }
