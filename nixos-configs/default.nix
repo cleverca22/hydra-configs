@@ -19,7 +19,7 @@ let
   };
   jobsetsAttrs = {
     inherit nixos-configs;
-    dummy = nixos-configs // { inputs = { foo = true; }; };
+    dummy2 = nixos-configs // { inputs = { foo = true; }; };
   };
 in {
   jobsets = pkgs.writeText "spec.json" (builtins.toJSON jobsetsAttrs);
