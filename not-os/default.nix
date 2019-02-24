@@ -5,7 +5,7 @@ let
 in with (import ../lib.nix { inherit pkgs; });
 with pkgs.lib;
 let
-  systems = ''[ "x86_64-linux" "i686-linux" "armv7l-linux" ]'';
+  systems = ''[ "x86_64-linux" "i686-linux" "armv7l-linux" "aarch64-linux" ]'';
   defaults = globalDefaults // {
     nixexprinput = "notos";
     nixexprpath = "release.nix";
