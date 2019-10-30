@@ -17,15 +17,15 @@ let
       nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
     };
   };
-  nixos-configs-1809 = defaults // {
+  nixos-configs-1909 = defaults // {
     description = "nixos-configs";
     inputs = {
       nixos-configs = mkFetchGithub "https://github.com/cleverca22/nixos-configs master";
-      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-18.09";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-19.09";
     };
   };
   jobsetsAttrs = {
-    inherit nixos-configs nixos-configs-1809;
+    inherit nixos-configs nixos-configs-1909;
   };
 in {
   jobsets = pkgs.writeText "spec.json" (builtins.toJSON jobsetsAttrs);
