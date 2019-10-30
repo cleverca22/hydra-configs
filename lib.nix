@@ -1,5 +1,3 @@
-{ pkgs }:
-
 rec {
   globalDefaults = {
     enabled = 1;
@@ -27,4 +25,16 @@ rec {
   minutes = 60;
   hours = 60 * minutes;
   days = 24 * hours;
+
+  makeSpec = contents: builtins.derivation {
+    name = "spec.json";
+    system = "x86_64-linux";
+    preferLocalBuild = true;
+    allowSubstitutes = false;
+    builder = "/bin/sh";
+    args = [ (builtins.toFile "builder.sh" ''
+      echo "$contents" > $out
+    '') ];
+    contents = builtins.toJSON contents;
+  };
 }

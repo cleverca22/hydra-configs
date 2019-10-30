@@ -2,7 +2,7 @@
 
 let
   pkgs = import <nixpkgs>{};
-in with (import ../lib.nix { inherit pkgs; });
+in with import ../lib.nix;
 with pkgs.lib;
 let
   systems = ''[ "x86_64-linux" "i686-linux" "armv7l-linux" "aarch64-linux" ]'';
@@ -44,5 +44,5 @@ let
   pull_requests = listToAttrs (mapAttrsToList makePr pr_data);
   jobsetsAttrs = pull_requests // primary_jobsets;
 in {
-  jobsets = pkgs.writeText "spec.json" (builtins.toJSON jobsetsAttrs);
+  jobsets = makeSpec jobsetsAttrs;
 }

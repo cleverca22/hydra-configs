@@ -1,9 +1,6 @@
 { }:
 
-let
-  pkgs = import <nixpkgs> {};
-in with (import ../lib.nix { inherit pkgs; });
-with pkgs.lib;
+with import ../lib.nix;
 let
   defaults = globalDefaults // {
     nixexprpath = "release.nix";
@@ -22,5 +19,5 @@ let
     inherit cachecache;
   };
 in {
-  jobsets = pkgs.writeText "spec.json" (builtins.toJSON jobsetsAttrs);
+  jobsets = makeSpec jobsetsAttrs;
 }

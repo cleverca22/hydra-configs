@@ -1,9 +1,6 @@
 { }:
 
-let
-  pkgs = import <nixpkgs> {};
-in with (import ../lib.nix { inherit pkgs; });
-with pkgs.lib;
+with import ../lib.nix;
 let
   defaults = globalDefaults // {
     nixexprinput = "nixos-configs";
@@ -28,5 +25,5 @@ let
     inherit nixos-configs nixos-configs-1909;
   };
 in {
-  jobsets = pkgs.writeText "spec.json" (builtins.toJSON jobsetsAttrs);
+  jobsets = makeSpec jobsetsAttrs;
 }
