@@ -15,8 +15,16 @@ let
       nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable";
     };
   };
+  rpi-open-firmware = defaults // {
+    keepnr = 3;
+    nixexprinput = "rpi-open-firmware";
+    description = "rpi open source firmware";
+    inputs = {
+      rpi-open-firmware = mkFetchGithub "https://github.com/cleverca22/rpi-open-firmware";
+    };
+  };
   jobsetsAttrs = {
-    inherit cachecache;
+    inherit cachecache rpi-open-firmware;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
