@@ -2,14 +2,11 @@
   "enabled": 1,
   "hidden": false,
   "description": "various nix projects",
-  "nixexprinput": "configs",
+  "nixexprinput": "declInput",
   "nixexprpath": "things/default.nix",
   "checkinterval": 600,
   "schedulingshares": 1000,
   "enableemail": false,
   "emailoverride": "",
-  "keepnr": 10,
-  "inputs":{
-    "configs": { "type": "git", "value": "https://github.com/cleverca22/hydra-configs master", "emailresponsible": false }
-  }
+  "keepnr": 10
 }
