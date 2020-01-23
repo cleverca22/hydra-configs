@@ -21,6 +21,7 @@ let
     description = "rpi open source firmware";
     inputs = {
       rpi-open-firmware = mkFetchGithub "https://github.com/cleverca22/rpi-open-firmware";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs 0ee0489d42e";
     };
   };
   jobsetsAttrs = {
