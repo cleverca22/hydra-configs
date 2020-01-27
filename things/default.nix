@@ -16,7 +16,7 @@ let
     };
   };
   rpi-open-firmware = defaults // {
-    keepnr = 3;
+    keepnr = 20;
     nixexprinput = "rpi-open-firmware";
     description = "rpi open source firmware";
     inputs = {
