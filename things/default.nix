@@ -23,8 +23,16 @@ let
       rpi-open-firmware = mkFetchGithub "https://github.com/cleverca22/rpi-open-firmware";
     };
   };
+  littlekernel = defaults // {
+    keepnr = 20;
+    nixexprinput = "lk";
+    description = "littlekernel";
+    inputs = {
+      lk = mkFetchGithub "https://github.com/cleverca22/lk";
+    };
+  };
   jobsetsAttrs = {
-    inherit cachecache rpi-open-firmware;
+    inherit cachecache rpi-open-firmware littlekernel;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
