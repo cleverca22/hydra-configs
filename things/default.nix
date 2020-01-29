@@ -28,7 +28,7 @@ let
     nixexprinput = "lk";
     description = "littlekernel";
     inputs = {
-      lk = mkFetchGithub "https://github.com/cleverca22/lk";
+      lk = mkFetchGithub "https://github.com/cleverca22/lk vc4";
     };
   };
   jobsetsAttrs = {
