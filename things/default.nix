@@ -7,7 +7,7 @@ let
     checkinterval = 600;
   };
   cachecache = defaults // {
-    keepnr = 3;
+    keepnr = 1;
     nixexprinput = "cachecache";
     description = "a nix binary cache cache";
     inputs = {
