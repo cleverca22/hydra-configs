@@ -31,8 +31,15 @@ let
       lk = mkFetchGithub "https://github.com/cleverca22/lk vc4";
     };
   };
+  kes-mmm-sumed25519 = defaults // {
+    keepnr = 20;
+    nixexprinput = "kes-mmm-sumed25519";
+    inputs = {
+      kes-mmm-sumed25519 = mkFetchGithub "http://github.com/input-output-hk/kes-mmm-sumed25519 nix-naersk";
+    };
+  };
   jobsetsAttrs = {
-    inherit cachecache rpi-open-firmware littlekernel;
+    inherit cachecache rpi-open-firmware littlekernel kes-mmm-sumed25519;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
