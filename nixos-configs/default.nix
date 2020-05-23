@@ -21,8 +21,15 @@ let
       nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-19.09";
     };
   };
+  nixos-configs-2003 = defaults // {
+    description = "nixos-configs";
+    inputs = {
+      nixos-configs = mkFetchGithub "https://github.com/cleverca22/nixos-configs master";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-20.03";
+    };
+  };
   jobsetsAttrs = {
-    inherit nixos-configs nixos-configs-1909;
+    inherit nixos-configs nixos-configs-1909 nixos-configs-2003;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
