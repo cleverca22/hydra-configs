@@ -24,7 +24,7 @@ let
       description = "notos-master";
       inputs = {
         notos = mkFetchGithub "https://github.com/cleverca22/not-os master";
-        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs.git master";
+        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs master";
         supportedSystems2 = { type = "nix"; value = systems; emailresponsible = false; };
       };
     };
