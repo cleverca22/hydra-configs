@@ -6,5 +6,5 @@ let
   ) ./.;
   pkgs = import <nixpkgs> {};
 in {
-  testcase = pkgs.writeText "testcase" (builtins.readFile "${filtered}/testcase.txt");
+  testcase = pkgs.writeText "testcase" (builtins.readFile "${./.}/testcase.txt");
 }
