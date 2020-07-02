@@ -31,15 +31,17 @@ let
       lk = mkFetchGithub "https://github.com/cleverca22/lk vc4";
     };
   };
-  kes-mmm-sumed25519 = defaults // {
-    keepnr = 20;
-    nixexprinput = "kes-mmm-sumed25519";
+  testcase = defaults // {
+    keepnr = 10;
+    nixexprinput = "testcase";
+    nixexprpath = "things/testcase.nix";
     inputs = {
-      kes-mmm-sumed25519 = mkFetchGithub "http://github.com/input-output-hk/kes-mmm-sumed25519 nix-naersk";
+      testcase = mkFetchGithub "https://github.com/cleverca22/hydra-configs";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable";
     };
   };
   jobsetsAttrs = {
-    inherit cachecache rpi-open-firmware littlekernel kes-mmm-sumed25519;
+    inherit cachecache rpi-open-firmware littlekernel testcase;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
