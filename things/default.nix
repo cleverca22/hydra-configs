@@ -31,6 +31,15 @@ let
       lk = mkFetchGithub "https://github.com/cleverca22/lk vc4";
     };
   };
+  esp32-baremetal = defaults // {
+    keepnr = 20;
+    nixexprinput = "esp32-baremetal";
+    nixexprpath = "default.nix";
+    description = "esp32-baremetal";
+    inputs = {
+      esp32-baremetal = mkFetchGithub "https://github.com/taktoa/esp32-baremetal";
+    };
+  };
   testcase = defaults // {
     keepnr = 10;
     nixexprinput = "testcase";
@@ -41,7 +50,7 @@ let
     };
   };
   jobsetsAttrs = {
-    inherit cachecache rpi-open-firmware littlekernel testcase;
+    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
