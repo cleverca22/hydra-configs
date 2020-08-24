@@ -41,6 +41,15 @@ let
       self = mkFetchGithub "https://github.com/cleverca22/hydra-configs";
     };
   };
+  "esp-idf.nix" = defaults // {
+    keepnr = 20;
+    nixexprinput = "esp-idf.nix";
+    nixexprpath = "default.nix";
+    description = "esp-idf.nix";
+    inputs = {
+      "esp-idf.nix" = mkFetchGithub "https://github.com/cleverca22/esp-idf.nix";
+    };
+  };
   testcase = defaults // {
     keepnr = 10;
     nixexprinput = "testcase";
@@ -51,7 +60,7 @@ let
     };
   };
   jobsetsAttrs = {
-    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal;
+    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal "esp-idf.nix";
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
