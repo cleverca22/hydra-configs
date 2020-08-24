@@ -33,11 +33,12 @@ let
   };
   esp32-baremetal = defaults // {
     keepnr = 20;
-    nixexprinput = "esp32-baremetal";
-    nixexprpath = "default.nix";
+    nixexprinput = "self";
+    nixexprpath = "things/esp32.nix";
     description = "esp32-baremetal";
     inputs = {
       esp32-baremetal = mkFetchGithub "https://github.com/taktoa/esp32-baremetal";
+      self = mkFetchGithub "https://github.com/cleverca22/hydra-configs";
     };
   };
   testcase = defaults // {
