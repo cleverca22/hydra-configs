@@ -6,6 +6,7 @@ let
     nixexprinput = "nixos-configs";
     nixexprpath = "release.nix";
     checkinterval = 600;
+    keepnr = 3;
   };
   nixos-configs = defaults // {
     description = "nixos-configs";
