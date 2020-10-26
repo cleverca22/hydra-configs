@@ -26,7 +26,7 @@ let
     description = "nixos-configs";
     inputs = {
       nixos-configs = mkFetchGithub "https://github.com/cleverca22/nixos-configs master";
-      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-20.09";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs.git nixos-20.09";
     };
   };
   jobsetsAttrs = {
