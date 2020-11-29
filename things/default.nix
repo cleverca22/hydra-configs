@@ -31,6 +31,14 @@ let
       lk = mkFetchGithub "https://github.com/cleverca22/lk vc4";
     };
   };
+  rpi-tools = defaults // {
+    keepnr = 20;
+    nixexprinput = "rpi-tools";
+    description = "rpi-tools";
+    inputs = {
+      rpi-tools = mkFetchGithub "https://github.com/librerpi/rpi-tools";
+    };
+  };
   esp32-baremetal = defaults // {
     keepnr = 20;
     nixexprinput = "self";
@@ -60,7 +68,7 @@ let
     };
   };
   jobsetsAttrs = {
-    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal "esp-idf.nix";
+    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal "esp-idf.nix" rpi-tools;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
