@@ -5,7 +5,7 @@ let
   defaults = globalDefaults // {
     nixexprinput = "nixos-configs";
     nixexprpath = "release.nix";
-    checkinterval = 600;
+    checkinterval = 3600;
     keepnr = 3;
   };
   nixos-configs = defaults // {
