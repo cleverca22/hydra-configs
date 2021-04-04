@@ -31,6 +31,14 @@ let
       lk = mkFetchGithub "https://github.com/cleverca22/lk vc4";
     };
   };
+  littlekernel-overlay = defaults // {
+    keepnr = 20;
+    nixexprinput = "lk-overlay";
+    description = "littlekernel";
+    inputs = {
+      lk-overlay = mkFetchGithub "https://github.com/librerpi/lk-overlay";
+    };
+  };
   rpi-tools = defaults // {
     keepnr = 20;
     nixexprinput = "rpi-tools";
