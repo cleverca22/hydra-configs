@@ -76,7 +76,7 @@ let
     };
   };
   jobsetsAttrs = {
-    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal "esp-idf.nix" rpi-tools;
+    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal "esp-idf.nix" rpi-tools littlekernel-overlay;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
