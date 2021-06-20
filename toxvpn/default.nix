@@ -21,7 +21,7 @@ let
       description = "toxvpn";
       inputs = {
         toxvpn = mkFetchGithub "https://github.com/cleverca22/toxvpn master";
-        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
+        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable-small";
       };
     };
   };
@@ -32,7 +32,7 @@ let
       description = "PR ${num}: ${info.title}";
       inputs = {
         toxvpn = mkFetchGithub "https://github.com/${info.head.repo.owner.login}/${info.head.repo.name}.git ${info.head.ref}";
-        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
+        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable-small";
       };
     };
   };
