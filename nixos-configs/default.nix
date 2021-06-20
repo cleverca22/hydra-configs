@@ -23,7 +23,7 @@ let
     };
   };
   jobsetsAttrs = {
-    inherit nixos-configs nixos-configs-2009;
+    inherit nixos-configs;# nixos-configs-2009;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
