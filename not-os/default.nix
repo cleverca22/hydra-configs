@@ -16,7 +16,7 @@ let
       description = "notos-unstable";
       inputs = {
         notos = mkFetchGithub "https://github.com/cleverca22/not-os master";
-        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
+        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable-small";
         supportedSystems2 = { type = "nix"; value = systems; emailresponsible = false; };
       };
     };
@@ -36,7 +36,7 @@ let
       description = "PR ${num}: ${info.title}";
       inputs = {
         notos = mkFetchGithub "https://github.com/cleverca22/not-os pull/${num}/head";
-        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
+        nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable-small";
         supportedSystems2 = { type = "nix"; value = systems; emailresponsible = false; };
       };
     };

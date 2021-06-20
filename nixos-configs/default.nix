@@ -12,14 +12,14 @@ let
     description = "nixos-configs";
     inputs = {
       nixos-configs = mkFetchGithub "https://github.com/cleverca22/nixos-configs master";
-      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable-small";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable-small";
     };
   };
   nixos-configs-2009 = defaults // {
     description = "nixos-configs";
     inputs = {
       nixos-configs = mkFetchGithub "https://github.com/cleverca22/nixos-configs master";
-      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs.git nixos-20.09";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-20.09";
     };
   };
   jobsetsAttrs = {

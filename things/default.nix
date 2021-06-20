@@ -12,7 +12,7 @@ let
     description = "a nix binary cache cache";
     inputs = {
       cachecache = mkFetchGithub "https://github.com/cleverca22/cachecache master";
-      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable";
     };
   };
   rpi-open-firmware = defaults // {
@@ -72,7 +72,7 @@ let
     nixexprpath = "things/testcase.nix";
     inputs = {
       testcase = mkFetchGithub "https://github.com/cleverca22/hydra-configs";
-      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs-channels.git nixos-unstable";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable";
     };
   };
   jobsetsAttrs = {
