@@ -1,0 +1,13 @@
+diff --git a/pkgs/development/libraries/libffi/default.nix b/pkgs/development/libraries/libffi/default.nix
+index 4332f43c5af..8a19a01043d 100644
+--- a/pkgs/development/libraries/libffi/default.nix
++++ b/pkgs/development/libraries/libffi/default.nix
+@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
+     # https://gitlab.haskell.org/ghc/ghc/-/merge_requests/6155
+     # https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/283
+     "--disable-exec-static-tramp"
+-  ];
++  ] ++ lib.optional (stdenv.system == "armv7l-linux") "--target=armv7l-linux";
+ 
+   preCheck = ''
+     # The tests use -O0 which is not compatible with -D_FORTIFY_SOURCE.
