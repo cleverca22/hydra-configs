@@ -3,6 +3,7 @@ let
   patchedPkgs = hostPkgs.runCommand "nixpkgs" { patches = [ ./libffi.patch ]; } ''
     cp -rL ${<nixpkgs>} $out
     cd $out
+    chmod -R +w .
     patchPhase
   '';
 in {
