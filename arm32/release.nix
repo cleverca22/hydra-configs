@@ -7,7 +7,7 @@
       python = super.python.overrideAttrs (old: {
         configureFlags = old.configureFlags ++ [ "--with-system-ffi" ];
       });
-      pythonPackages = self.callPackage ("${self.path}/pkgs/top-level/python-packages.nix") {
+      pythonPackages = self.callPackage (<nixpkgs/pkgs/top-level/python-packages.nix>) {
         python = self.python;
       };
     };
