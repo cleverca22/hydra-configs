@@ -8,5 +8,8 @@
     pkgs = import <nixpkgs> { system = "armv7l-linux"; overlays = [ overlay ]; };
   in {
     inherit (pkgs) stdenv libunwind;
+    pythonPackages = {
+      inherit (pkgs.pythonPackages) setuptools;
+    };
   };
 }
