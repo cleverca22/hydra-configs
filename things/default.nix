@@ -75,8 +75,17 @@ let
       nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable";
     };
   };
+  arm32 = defaults // {
+    keepnr = 10;
+    nixexprinput = "hydra-configs";
+    nixexprpath = "arm32/release.nix";
+    inputs = {
+      testcase = mkFetchGithub "https://github.com/cleverca22/hydra-configs";
+      nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable";
+    };
+  };
   jobsetsAttrs = {
-    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal "esp-idf.nix" rpi-tools littlekernel-overlay;
+    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal "esp-idf.nix" rpi-tools littlekernel-overlay arm32;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
