@@ -80,7 +80,7 @@ let
     nixexprinput = "hydra-configs";
     nixexprpath = "arm32/release.nix";
     inputs = {
-      testcase = mkFetchGithub "https://github.com/cleverca22/hydra-configs";
+      hydra-configs = mkFetchGithub "https://github.com/cleverca22/hydra-configs";
       nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable";
     };
   };
