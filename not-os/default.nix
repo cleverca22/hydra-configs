@@ -22,6 +22,7 @@ let
     };
     notos-master = defaults // {
       description = "notos-master";
+      checkinterval = 24 * 60 * 60;
       inputs = {
         notos = mkFetchGithub "https://github.com/cleverca22/not-os master";
         nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs master";
