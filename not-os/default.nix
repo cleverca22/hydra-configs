@@ -29,8 +29,9 @@ let
         supportedSystems2 = { type = "nix"; value = systems; emailresponsible = false; };
       };
     };
-    notos-flake = defaults // {
+    notos-flake = globalDefaults // {
       flake = "github:cleverca22/not-os";
+      checkinterval = 3600;
     };
   };
   pr_data = builtins.fromJSON (builtins.readFile pulls);
