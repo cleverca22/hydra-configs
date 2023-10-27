@@ -29,6 +29,9 @@ let
         supportedSystems2 = { type = "nix"; value = systems; emailresponsible = false; };
       };
     };
+    notos-flake = defaults // {
+      flake = "github:cleverca22/not-os";
+    };
   };
   pr_data = builtins.fromJSON (builtins.readFile pulls);
   makePr = num: info: {
