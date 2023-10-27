@@ -32,6 +32,7 @@ let
     notos-flake = globalDefaults // {
       flake = "github:cleverca22/not-os";
       checkinterval = 3600;
+      type = 1;
     };
   };
   pr_data = builtins.fromJSON (builtins.readFile pulls);
