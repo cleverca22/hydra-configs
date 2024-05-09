@@ -49,7 +49,8 @@ let
     };
   };
   esp32-baremetal = defaults // {
-    keepnr = 20;
+    checkinterval = 3600 * 24;
+    keepnr = 1;
     nixexprinput = "self";
     nixexprpath = "things/esp32.nix";
     description = "esp32-baremetal";
@@ -59,7 +60,8 @@ let
     };
   };
   "esp-idf.nix" = defaults // {
-    keepnr = 20;
+    checkinterval = 3600 * 24;
+    keepnr = 1;
     nixexprinput = "esp-idf.nix";
     nixexprpath = "default.nix";
     description = "esp-idf.nix";
