@@ -4,10 +4,9 @@ with import ../lib.nix;
 let
   defaults = globalDefaults // {
     nixexprpath = "release.nix";
-    checkinterval = 600;
+    checkinterval = 3600 * 24;
   };
   cachecache = defaults // {
-    checkinterval = 3600 * 24;
     keepnr = 1;
     nixexprinput = "cachecache";
     description = "a nix binary cache cache";
@@ -49,7 +48,6 @@ let
     };
   };
   esp32-baremetal = defaults // {
-    checkinterval = 3600 * 24;
     keepnr = 1;
     nixexprinput = "self";
     nixexprpath = "things/esp32.nix";
@@ -60,7 +58,6 @@ let
     };
   };
   "esp-idf.nix" = defaults // {
-    checkinterval = 3600 * 24;
     keepnr = 1;
     nixexprinput = "esp-idf.nix";
     nixexprpath = "default.nix";
