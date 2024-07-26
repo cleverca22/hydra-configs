@@ -24,7 +24,7 @@ let
     };
   };
   littlekernel = defaults // {
-    keepnr = 20;
+    keepnr = 5;
     nixexprinput = "lk";
     description = "littlekernel";
     inputs = {
@@ -32,7 +32,7 @@ let
     };
   };
   littlekernel-overlay = defaults // {
-    keepnr = 20;
+    keepnr = 5;
     nixexprinput = "lk-overlay";
     description = "littlekernel";
     inputs = {
