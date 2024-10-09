@@ -84,8 +84,13 @@ let
       nixpkgs = mkFetchGithub "https://github.com/nixos/nixpkgs nixos-unstable";
     };
   };
+  lk = defaults // {
+    flake = "github:librerpi/lk-overlay?submodules=1";
+    type = 1;
+    checkinterval = 3600;
+  };
   jobsetsAttrs = {
-    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal "esp-idf.nix" rpi-tools littlekernel-overlay arm32;
+    inherit cachecache rpi-open-firmware littlekernel testcase esp32-baremetal "esp-idf.nix" rpi-tools littlekernel-overlay arm32 lk;
   };
 in {
   jobsets = makeSpec jobsetsAttrs;
