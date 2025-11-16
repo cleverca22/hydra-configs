@@ -21,6 +21,7 @@ let
       };
     };
     notos-master = defaults // {
+      enabled = false;
       description = "notos-master";
       checkinterval = 24 * 60 * 60;
       inputs = {
