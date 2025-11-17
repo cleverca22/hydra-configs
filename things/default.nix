@@ -85,7 +85,7 @@ let
     };
   };
   lk = defaults // {
-    flake = "github:librerpi/lk-overlay?submodules=1";
+    flake = "github:librerpi/lk-overlay";
     type = 1;
     checkinterval = 3600;
   };
